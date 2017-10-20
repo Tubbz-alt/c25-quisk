@@ -267,9 +267,11 @@ class Hardware(BaseHardware):
     else:
       self.pc2hermes[2] &= ~0x08
     QS.pc_to_hermes(self.pc2hermes)
+    if DEBUG: print ("Change Dither to", value)
   def ChangeAlexAtt(self, value):
     self.pc2hermes[2] = (self.pc2hermes[2] & ~0x03) | value
     QS.pc_to_hermes(self.pc2hermes)
+    if DEBUG: print ("Change Dither  to", value)
   def SetTxLevel(self):
     try:
       tx_level = self.conf.tx_level[self.band]

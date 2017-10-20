@@ -87,7 +87,7 @@ class BottomWidgets:	# Add extra widgets to the bottom of the screen
     self.hardware.ChangeLNA(new_lna)
     self.hardware.ChangeDither(new_dither)
   def OnAlexAtt(self, event):
-    self.hardware.ChangeAlexAtt(event.GetEventObject().GetValue() + 3)
+    self.hardware.ChangeAlexAtt(- event.GetEventObject().GetValue())
   def UpdateText(self):
     temp = self.hardware.hermes_temperature
     ## For best accuracy, 3.26 should be a user's measured 3.3V supply voltage.
